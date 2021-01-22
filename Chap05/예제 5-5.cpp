@@ -5,7 +5,7 @@ bool average(int a[], int size, int& avg) {	// 리텅 타입을 bool로 하고 평균값을 
 	if (size <= 0)
 		return false;
 	int sum = 0;
-	for (int i = 0; i < size < i++)
+	for (int i = 0; i < size; i++)
 		sum += a[i];
 	avg = sum / size;	// 참조 매개 변수 avg에 평균값 전달
 	return true;
