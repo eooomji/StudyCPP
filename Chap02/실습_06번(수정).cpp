@@ -2,7 +2,6 @@
 #include <cstring>
 using namespace std;
 
-// 미완
 int main() {
 	char str1[100] = "";
 	cout << "새 암호를 입력하세요>>";
