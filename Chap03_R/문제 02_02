@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Printer {
+private:
+	char str[100];
+public:
+	void SetString(char*inputStr);
+	void ShowString();
+};
+
+void Printer::SetString(char* inputStr) {
+	strcpy(str, inputStr);
+	cout << "\n";
+}
+
+void Printer::ShowString() {
+	cout << str;
+}
+
+int main() {
+	Printer pnt;
+	pnt.SetString("Hello world!");  // 빨간줄 뜸
+	pnt.ShowString();
+
+	pnt.SetString("I love C++");  // 빨간줄 뜸...
+	pnt.ShowString();
+	return  0;
+}
