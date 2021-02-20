@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+class Point {
+private:
+  int x;
+  int y;
+public:
+  bool InitMembers(int xpos, int ypos);
+  // 정보은닉으로 인해 추가되는 엑세스 함수들
+  int GetX() const;
+  int GetY() const;
+  bool SetX(int xpos);
+  bool SetY(int ypos);
+}
+
+bool Point::SetX(int xpos) {
+  if (0 > xpos || xpos > 100) { // 벗어난 범위의 값 저장을 원천적으로 막고 있음
+    cout << "벗어난 범위의 값 전달" << endl;
+    return false;
+  }
+  x = xpos;
+  return true;
+}
