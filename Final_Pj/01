@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+typedef struct Account {
+	int ID;
+	char Name[100];
+	int Money;
+	struct Account* Next;
+}Account;
+
+Account* createAccount() {
+	Account* NewAccount = new Account;
+	NewAccount->Next = NULL;
+
+	cout << "ID: ";
+	cin >> NewAccount->ID;
+	cout << "이름: ";
+	cin >> NewAccount->Name;
+	cout << "넣을 금액: ";
+	cin >> NewAccount->Money;
+
+	return NewAccount;
+}
+
+Account* moneyIn(Account* Node, int putId) {
+	if (Node == NULL)
+	{
+		printf("해당 ID의 사람이 존재하지 않습니다.\n");
+		return NULL;
+	}
+	else if (strcmp(Node->ID, Name) == 0)						// Node->Name이랑 Name 같으면
+	{
+		Student* DeleteNode = Node;								
+		printf("학생 %s 정보를 삭제하였습니다.\n", Node->Name);	
+		Node = Node->Next;										
+		free(DeleteNode);										
+		return Node;
+	}
+	else													
+	{
+		Node->Next = Delete(Node->Next, Name);					
+		return Node;
+	}
+}
+
+void ShowAccount(Account* Node) {
+	if (Node == NULL)
+		cout << "해당 ID가 존재하지 않습니다." << endl;
+	else {
+		cout << "ID: " << Node->ID << endl;
+		cout << "이름: " << Node->Name << endl;
+		cout << "잔액: " << Node->Money << endl;
+	}
+}
+
+int main() {
+	// 계좌개설, 입금, 출금, 계좌 정보 조회
+	// 계좌 개설 - ID, 이름, 넣을 금액 => 함수로 해도 될 듯 
+	// 입금, 출금 - ID, 넣고 뺄 금액 => 함수로 해도 될 듯
+	// 넣을 금액 - 입력 받고 원래 있던 거에 +해서 다시 넣어주기
+	// 뺄 금액 - 그만큼의 잔고가 있는지 확인하고 있으면 -해서 다시 넣어주기
+	//			 그만큼의 잔고가 없으면 잔고가 부족하다고, 남은 잔고 알려주기
+	// 계좌 정보 조회 - ID, 이름, 잔액
+	// createAccount();
+	return 0;
+}
